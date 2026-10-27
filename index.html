@@ -1,8 +1,19 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Portfolio.Hamid Azizi</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio: Umschüler zum Fachinformatiker für Anwendungsentwicklung, Praktikum gesucht.">
+<title>Hamid Azizi · Portfolio</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
+:root { color-scheme: light; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Foto-Upload nur sichtbar mit ?edit in der Adresse */
+html:not(.edit) .photo-actions, html:not(.edit) .editor { display: none; }
+
 /* Layout: Portfolio als API-Dokumentation. Jede Sektion ist ein Endpunkt, Projekte sind Requests mit Status 200. */
 :root {
   --bg: #f3f5f8;
@@ -166,13 +177,16 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
   html.rv-on .rv.in { opacity: 1; transform: none; }
 }
 </style>
+<script>if (location.search.indexOf("edit") !== -1) document.documentElement.classList.add("edit");</script>
+</head>
+<body>
 
 <canvas id="bg3d" aria-hidden="true"></canvas>
 <div class="wrap">
   <header class="bar">
-    <span class="brand">~/<span class="ph">Hamid Azizi</span></span>
+    <span class="brand">~/hamid-azizi</span>
     <nav aria-label="Hauptnavigation">
-      <a href="#projekte">/projekte</a>
+      <a href="#projekte" hidden>/projekte</a>
       <a href="#skills">/skills</a>
       <a href="#ueber-mich">/über-mich</a>
       <a href="#kontakt">/kontakt</a>
@@ -183,7 +197,7 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
     <div class="hero">
       <div>
         <div class="id">
-          <div class="avatar" id="avatar" role="img" aria-label="Profilfoto">VN</div>
+          <div class="avatar" id="avatar" role="img" aria-label="Profilfoto">HA</div>
           <div class="photo-actions">
             <div class="row">
               <input class="sr" type="file" id="photo" accept="image/*">
@@ -200,11 +214,11 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
           </div>
         </div>
         <p class="eyebrow">Umschüler · Fachinformatiker Anwendungsentwicklung</p>
-        <h1><span class="ph">Hamid Azizi</span></h1>
-        <p class="lead">Ich mache eine Umschulung zum Fachinformatiker für Anwendungsentwicklung. Für die praktische Phase suche ich ein Team, in dem ich mein Wissen erweitern und in einem 9-monatigen Praktikum aktiv unterstützen kann. Ort: <span class="ph">Stadt / remote</span>.</p>
+        <h1>Hamid Azizi</h1>
+        <p class="lead">Ich mache eine Umschulung zum Fachinformatiker für Anwendungsentwicklung. Für die praktische Phase suche ich ein Team, in dem ich mein Wissen erweitern und in einem 9-monatigen Praktikum aktiv unterstützen kann.</p>
         <div class="cta">
-          <a class="btn primary" href="#projekte">Projekte ansehen</a>
-          <a class="btn ghost" href="https://github.com/" rel="noopener">GitHub-Profil</a>
+          <a class="btn primary" href="#kontakt">Kontakt aufnehmen</a>
+          <a class="btn ghost" href="https://github.com/azizihamid199" rel="noopener">GitHub-Profil</a>
         </div>
       </div>
       <div class="resp" aria-label="Kurzprofil als API-Antwort">
@@ -216,12 +230,12 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
   <span class="k">"web"</span>: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>],
   <span class="k">"sucht"</span>: <span class="s">"Praktikum im Team"</span>,
   <span class="k">"dauer_monate"</span>: <span class="n">9</span>,
-  <span class="k">"standort"</span>: <span class="s">"Stadt"</span>
+  <span class="k">"verfügbar"</span>: <span class="s">"sofort"</span>
 <span class="k">}</span></pre>
       </div>
     </div>
 
-    <section id="projekte">
+    <section id="projekte" hidden>
       <div class="sec-head"><h2>Projekte</h2><span class="route">GET /projekte</span></div>
       <p class="sec-intro">Drei Projekte aus meiner Umschulung. Sie zeigen, wie ich vom Problem über die Umsetzung zum Ergebnis komme. Den Code findest du jeweils auf GitHub.</p>
 
@@ -291,7 +305,7 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
       <div class="sec-head"><h2>Skills</h2><span class="route">GET /skills</span></div>
       <p class="sec-intro">Solide Grundlagen aus meiner Umschulung. Rechts steht mein aktueller Stand und das, was ich im Praktikum vertiefen möchte.</p>
       <div class="skills">
-        <div class="skill-group"><h3>Programmiersprachen</h3>
+        <div class="skill-group"><h3>Sprachen</h3>
           <div class="skill-row"><span>Java</span><span>Grundlagen</span></div>
           <div class="skill-row"><span>Python</span><span>Grundlagen</span></div>
         </div>
@@ -314,31 +328,29 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
       <div class="sec-head"><h2>Über mich</h2><span class="route">GET /ueber-mich</span></div>
       <div class="two" style="margin-top:24px">
         <div class="about">
-          <p><span class="ph">Auf der Suche nach einem zukunftssicheren Arbeitsfeld mit echtem Gestaltungsspielraum habe ich meine Leidenschaft für das Programmieren entdeckt und den Schritt in die Umschulung gewagt. Hier fühle ich mich zu Hause,
-            weil es hier um das funktionale Fundament einer Anwendung geht – von effizienten SQL-Abfragen bis hin zu stabiler Logik. Genau diese technischen Herausforderungen spornen mich an.</span></p>
+          <p>Auf der Suche nach einem zukunftssicheren Arbeitsfeld mit echtem Gestaltungsspielraum habe ich meine Leidenschaft für das Programmieren entdeckt und den Schritt in die Umschulung gewagt. Hier fühle ich mich zu Hause, weil es hier um das funktionale Fundament einer Anwendung geht – von effizienten SQL-Abfragen bis hin zu stabiler Logik. Genau diese technischen Herausforderungen spornen mich an.</p>
           <p>In meiner Umschulung habe ich mir Grundlagen in Java, Python, SQL, HTML und CSS erarbeitet. Jetzt möchte ich sie in einem echten Team anwenden, von erfahrenen Kolleginnen und Kollegen lernen und das Team im Alltag unterstützen.</p>
-          <p>Außerhalb des Codes: <span class="ph">Schnelle Ballwechsel beim Tischtennis und gelegentliche Uber-Fahrten, bei denen ich gerne mit interessanten Menschen ins Gespräch komme.</span></p>
+          <p>Außerhalb des Codes: Schnelle Ballwechsel beim Tischtennis und gelegentliche Uber-Fahrten, bei denen ich gerne mit interessanten Menschen ins Gespräch komme.</p>
         </div>
         <ol class="timeline" aria-label="Werdegang">
-          <li><span class="when"><span class="ph">Start 16.06.2025 – Ende 15.06.2027</span></span><div><strong>Umschulung zum Fachinformatiker für Anwendungsentwicklung</strong><p class="where"><span class="ph">Bildungsträger, Ort</span></p></div></li>
-          <li><span class="when">Praktische Phase</span><div><strong>Praktikum im Entwicklerteam (gesucht)</strong><p class="where">9 Monate, ab <span class="ph">Sofort</span></p></div></li>
-          <li><span class="when"><span class="ph">Davor</span></span><div><strong><span class="ph">Bisheriger Beruf oder Ausbildung</span></strong><p class="where"><span class="ph">Cenntro Automotive Europe GmbH, Dort habe ich gelernt, Probleme systematisch einzugrenzen, präzise und sorgfältig 
-zu arbeiten und Verantwortung für das Ergebnis zu übernehmen.</span></p></div></li>
+          <li><span class="when">06/2025 – 06/2027</span><div><strong>Umschulung zum Fachinformatiker für Anwendungsentwicklung</strong></div></li>
+          <li><span class="when">Praktische Phase</span><div><strong>Praktikum im Entwicklerteam (gesucht)</strong><p class="where">9 Monate, ab sofort</p></div></li>
+          <li><span class="when">Davor</span><div><strong>Cenntro Automotive Europe GmbH</strong><p class="where">Dort habe ich gelernt, Probleme systematisch einzugrenzen, präzise und sorgfältig zu arbeiten und Verantwortung für das Ergebnis zu übernehmen.</p></div></li>
         </ol>
       </div>
     </section>
+
     <section id="kontakt">
       <div class="sec-head"><h2>Kontakt</h2><span class="route">POST /kontakt</span></div>
       <p class="sec-intro">Ihr habt einen Praktikumsplatz für 9 Monate in der Anwendungsentwicklung? Ich freue mich über eure Nachricht.</p>
       <div class="contact">
-        <div class="contact-row"><span class="lab">E-Mail</span><span class="val" id="mail"><span class="ph">azizihamid199@gmail.com</span></span><button class="copy" type="button" data-target="mail">Kopieren</button></div>
-        <div class="contact-row"><span class="lab">GitHub</span><span class="val"><span class="ph">github.com/azizihamid199</span></span></div>
-        <div class="contact-row"><span class="lab">LinkedIn</span><span class="val"><span class="ph">linkedin.com/in/Hamid Azizi</span></span></div>
+        <div class="contact-row"><span class="lab">E-Mail</span><span class="val" id="mail">azizihamid199@gmail.com</span><button class="copy" type="button" data-target="mail">Kopieren</button></div>
+        <div class="contact-row"><span class="lab">GitHub</span><span class="val"><a href="https://github.com/azizihamid199" rel="noopener">github.com/azizihamid199</a></span></div>
       </div>
     </section>
   </main>
 
-  <footer><span>© <span class="ph">Vorname Nachname</span></span><span>Gelb markierte Stellen sind Platzhalter.</span></footer>
+  <footer><span>© 2026 Hamid Azizi</span><span>Umschüler FIAE · Praktikum gesucht</span></footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -361,7 +373,14 @@ zu arbeiten und Verantwortung für das Ergebnis zu übernehmen.</span></p></div>
     avatar.textContent = initials; removeBtn.hidden = true; input.value = '';
     try { localStorage.removeItem(KEY); } catch (e) {}
   }
-  try { var saved = localStorage.getItem(KEY); if (saved) show(saved); } catch (e) {}
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (saved) { show(saved); }
+  else {
+    var t = new Image();
+    t.onload = function () { show('foto.jpg'); removeBtn.hidden = true; };
+    t.src = 'foto.jpg';
+  }
   var editor = document.getElementById('editor');
   var zoom = document.getElementById('zoom'), px = document.getElementById('px'), py = document.getElementById('py');
   var okBtn = document.getElementById('photo-ok'), cancelBtn = document.getElementById('photo-cancel');
@@ -557,4 +576,6 @@ document.querySelectorAll('.copy').forEach(function (btn) {
 });
 </script>
 
-</body></html>
+</body>
+</html>
+
