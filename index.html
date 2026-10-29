@@ -111,6 +111,7 @@ section { padding-block: 56px; border-top: 1px solid var(--line); }
 .facts { display: grid; gap: 14px; margin-top: 18px; }
 .fact dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
 .fact dd { margin: 0; }
+.fact code { font-family: var(--font-mono); font-size: .88em; background: var(--accent-soft); padding: 1px 5px; border-radius: 3px; }
 .side { display: grid; gap: 18px; align-content: start; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
 .tags li { font-family: var(--font-mono); font-size: 12.5px; border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px; }
@@ -186,7 +187,7 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
   <header class="bar">
     <span class="brand">~/hamid-azizi</span>
     <nav aria-label="Hauptnavigation">
-      <a href="#projekte" hidden>/projekte</a>
+      <a href="#projekte">/projekte</a>
       <a href="#skills">/skills</a>
       <a href="#ueber-mich">/über-mich</a>
       <a href="#kontakt">/kontakt</a>
@@ -218,7 +219,7 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
         <p class="lead">Ich mache eine Umschulung zum Fachinformatiker für Anwendungsentwicklung. Für die praktische Phase suche ich ein Team, in dem ich mein Wissen erweitern und in einem 9-monatigen Praktikum aktiv unterstützen kann.</p>
         <div class="cta">
           <a class="btn primary" href="#kontakt">Kontakt aufnehmen</a>
-          <a class="btn ghost" href="https://github.com/azizihamid199" rel="noopener">GitHub-Profil</a>
+          <a class="btn ghost" href="https://github.com/azizihamid199-hub" rel="noopener">GitHub-Profil</a>
         </div>
       </div>
       <div class="resp" aria-label="Kurzprofil als API-Antwort">
@@ -235,66 +236,67 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
       </div>
     </div>
 
-    <section id="projekte" hidden>
+    <section id="projekte">
       <div class="sec-head"><h2>Projekte</h2><span class="route">GET /projekte</span></div>
-      <p class="sec-intro">Drei Projekte aus meiner Umschulung. Sie zeigen, wie ich vom Problem über die Umsetzung zum Ergebnis komme. Den Code findest du jeweils auf GitHub.</p>
+      <p class="sec-intro">Drei Übungsprojekte aus meiner Umschulung. Den Code findest du jeweils auf GitHub.</p>
 
       <div class="projects">
         <article class="proj">
-          <div class="proj-top"><span class="method">GET</span><span class="path">/projekte/<span class="ph">projekt-eins</span></span><span class="code">200</span></div>
+          <div class="proj-top"><span class="method">GET</span><span class="path">/projekte/car-rental</span><span class="code">200</span></div>
           <div class="proj-body">
             <div>
-              <h3><span class="ph">Java-Anwendung mit Datenbank</span></h3>
-              <p>Eine Java-Anwendung, die Daten in einer SQL-Datenbank speichert, ändert und auswertet.</p>
+              <h3>Autovermietung in Java</h3>
+              <p>Konsolenanwendung zur Verwaltung einer Fahrzeugflotte: Autos anzeigen, mieten und zurückgeben.</p>
               <dl class="facts">
-                <div class="fact"><dt>Problem</dt><dd><span class="ph">Was sollte das Projekt lösen? Ein Satz.</span></dd></div>
-                <div class="fact"><dt>Lösung</dt><dd><span class="ph">Wie hast du es gebaut? Architektur, wichtige Entscheidungen.</span></dd></div>
-                <div class="fact"><dt>Ergebnis</dt><dd><span class="ph">z. B. Funktionen, die du umgesetzt hast, oder was du gelernt hast.</span></dd></div>
+                <div class="fact"><dt>Problem</dt><dd>Eine kleine Fahrzeugflotte soll verwaltet werden, ohne dass ein Auto doppelt vermietet wird.</dd></div>
+                <div class="fact"><dt>Lösung</dt><dd>Drei Klassen mit klaren Aufgaben: <code>Vehicle</code> für die Daten (private Felder mit Gettern und Settern), <code>RentalSystem</code> für die Logik mit einer <code>ArrayList</code> und <code>Main</code> für das Menü mit <code>Scanner</code>.</dd></div>
+                <div class="fact"><dt>Ergebnis</dt><dd>Fahrzeuge lassen sich anzeigen, mieten und zurückgeben. Doppelvermietung und unbekannte IDs werden abgefangen.</dd></div>
               </dl>
             </div>
             <div class="side">
               <div><p class="label">Stack</p>
-                <ul class="tags"><li>Java</li><li>SQL</li></ul></div>
-              <div class="links"><a href="https://github.com/" rel="noopener">Code auf GitHub</a></div>
+                <ul class="tags"><li>Java</li><li>OOP</li><li>ArrayList</li><li>Git</li></ul></div>
+              <div class="links"><a href="https://github.com/azizihamid199-hub/car-rental" rel="noopener">Code auf GitHub</a></div>
             </div>
           </div>
         </article>
 
         <article class="proj">
-          <div class="proj-top"><span class="method">GET</span><span class="path">/projekte/<span class="ph">projekt-zwei</span></span><span class="code">200</span></div>
+          <div class="proj-top"><span class="method">GET</span><span class="path">/projekte/budget-planer-python</span><span class="code">200</span></div>
           <div class="proj-body">
             <div>
-              <h3><span class="ph">Python-Programm oder Tool</span></h3>
-              <p>Ein Python-Programm, das Daten einliest, verarbeitet und übersichtlich ausgibt.</p>
+              <h3>Budget-Planer in Python mit SQL</h3>
+              <p>Konsolenanwendung, die Einnahmen und Ausgaben in einer SQLite-Datenbank speichert und den Saldo berechnet.</p>
               <dl class="facts">
-                <div class="fact"><dt>Problem</dt><dd><span class="ph">Welche Aufgabe stand dahinter?</span></dd></div>
-                <div class="fact"><dt>Lösung</dt><dd><span class="ph">Eingesetzte Technik, z. B. Dateien einlesen, Funktionen, Tests.</span></dd></div>
-                <div class="fact"><dt>Ergebnis</dt><dd><span class="ph">Was kann das Programm? z. B. Auswertung von 1.000 Datensätzen.</span></dd></div>
+                <div class="fact"><dt>Problem</dt><dd>Einnahmen und Ausgaben sollen erfasst werden, und die Daten müssen nach dem Beenden des Programms erhalten bleiben.</dd></div>
+                <div class="fact"><dt>Lösung</dt><dd>Python mit SQLite. Datenbankzugriff und Benutzeroberfläche liegen in getrennten Dateien, Eingaben werden mit <code>try/except</code> geprüft.</dd></div>
+                <div class="fact"><dt>Ergebnis</dt><dd>Transaktionen mit Kategorie und Zeitstempel werden gespeichert und aufgelistet. Das Programm berechnet den Saldo und warnt bei einem Minus.</dd></div>
               </dl>
             </div>
             <div class="side">
               <div><p class="label">Stack</p>
-                <ul class="tags"><li>Python</li><li>SQL</li></ul></div>
-              <div class="links"><a href="https://github.com/" rel="noopener">Code auf GitHub</a></div>
+                <ul class="tags"><li>Python</li><li>SQLite</li><li>SQL</li><li>Git</li></ul></div>
+              <div class="links"><a href="https://github.com/azizihamid199-hub/budget-planer-python" rel="noopener">Code auf GitHub</a></div>
             </div>
           </div>
         </article>
 
         <article class="proj">
-          <div class="proj-top"><span class="method">GET</span><span class="path">/projekte/<span class="ph">projekt-drei</span></span><span class="code">200</span></div>
+          <div class="proj-top"><span class="method">GET</span><span class="path">/projekte/dashboard-frontend</span><span class="code">200</span></div>
           <div class="proj-body">
             <div>
-              <h3><span class="ph">Website mit HTML und CSS</span></h3>
-              <p>Eine responsive Website, die auf Handy und Desktop gut aussieht.</p>
+              <h3>Admin-Dashboard mit HTML und CSS</h3>
+              <p>Dunkles Dashboard mit Seitenleiste, Kennzahlen-Karten und einer Tabelle für letzte Aktivitäten.</p>
               <dl class="facts">
-                <div class="fact"><dt>Deine Rolle</dt><dd><span class="ph">Was hast du konkret gebaut?</span></dd></div>
-                <div class="fact"><dt>Ergebnis</dt><dd><span class="ph">z. B. Seite online, Mobilansicht umgesetzt.</span></dd></div>
+                <div class="fact"><dt>Aufgabe</dt><dd>Eine übersichtliche Oberfläche für Kennzahlen und Aktivitäten gestalten, ohne Framework.</dd></div>
+                <div class="fact"><dt>Umsetzung</dt><dd>Semantisches HTML5, Layout mit Flexbox und CSS Grid, Karten und Statusanzeigen (Badges) in reinem CSS.</dd></div>
+                <div class="fact"><dt>Ergebnis</dt><dd>Statische Oberfläche mit Seitenleiste, drei Karten und Tabelle. Die Zahlen sind Beispieldaten.</dd></div>
               </dl>
             </div>
             <div class="side">
               <div><p class="label">Stack</p>
-                <ul class="tags"><li>HTML</li><li>CSS</li></ul></div>
-              <div class="links"><a href="https://github.com/" rel="noopener">Code auf GitHub</a></div>
+                <ul class="tags"><li>HTML5</li><li>CSS3</li><li>Flexbox</li><li>Grid</li></ul></div>
+              <div class="links"><a href="https://github.com/azizihamid199-hub/dashboard-frontend" rel="noopener">Code auf GitHub</a></div>
             </div>
           </div>
         </article>
@@ -345,7 +347,7 @@ footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-famil
       <p class="sec-intro">Ihr habt einen Praktikumsplatz für 9 Monate in der Anwendungsentwicklung? Ich freue mich über eure Nachricht.</p>
       <div class="contact">
         <div class="contact-row"><span class="lab">E-Mail</span><span class="val" id="mail">azizihamid199@gmail.com</span><button class="copy" type="button" data-target="mail">Kopieren</button></div>
-        <div class="contact-row"><span class="lab">GitHub</span><span class="val"><a href="https://github.com/azizihamid199" rel="noopener">github.com/azizihamid199</a></span></div>
+        <div class="contact-row"><span class="lab">GitHub</span><span class="val"><a href="https://github.com/azizihamid199-hub" rel="noopener">github.com/azizihamid199-hub</a></span></div>
       </div>
     </section>
   </main>
@@ -578,4 +580,3 @@ document.querySelectorAll('.copy').forEach(function (btn) {
 
 </body>
 </html>
-
